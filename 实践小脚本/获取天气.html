@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h1 id="#11"></h1>
+      <button onclick="getlove()">点击获取土味情话</button>
+    </div>
+    <script>
+      var xhr = new XMLHttpRequest();
+      xhr.open(
+        "GET",
+        "http://www.7timer.info/bin/api.pl?lon=139.44&lat=35.41&product=astro&output=json"
+      );
+      xhr.send();
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          // console.log(xhr);
+          console.log(xhr.responseText);
+        }
+      };
+    </script>
+  </body>
+</html>

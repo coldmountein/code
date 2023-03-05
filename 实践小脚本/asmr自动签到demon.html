@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let zhongjian = localStorage.getItem("zuotian", "166688640000");
+      console.log("昨天签到时间为" + zhongjian);
+      let Today = new Date();
+      let chazhi = Today - zhongjian;
+      if (chazhi > 86400000) {
+        open("https://eatasmr.com/tasks/attendance");
+        //let btn=document.querySelector('.abutton')
+        //btn.click()
+        console.log("差值为" + chazhi);
+        console.log("应该签到");
+        console.log("签到时间为" + Today);
+        localStorage.setItem("zuotian", Today);
+        let chakanshijiann = localStorage.getItem("zuotian", "Today");
+        console.log("存储进的时间为" + chakanshijiann);
+      }
+      // //下面为时间转换函数
+      // function timestampToTime(timestamp) {
+      //     var date = new Date(timestamp);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
+      //     Y = date.getFullYear() + '-';
+      //     M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
+      //     D = date.getDate() + ' ';
+      //     h = date.getHours() + ':';
+      //     m = date.getMinutes() + ':';
+      //     s = date.getSeconds();
+      //     return Y+M+D+h+m+s;
+      // }
+      // // console.log(timestampToTime(zhongjian));//2014-06
+      // //上面为时间转换函数
+      // let yesterdayTime=timestampToTime(zhongjian);
+    </script>
+  </body>
+</html>

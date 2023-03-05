@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="fatherBox" style="border: 1px solid red">
+      我是父盒子
+      <div class="meBox" style="background-color: pink">我是一个盒子</div>
+    </div>
+
+    <ol>
+      <li>香蕉</li>
+      <li class="apple">苹果</li>
+      <li>桃子</li>
+    </ol>
+    <div class="operate">
+      <button onclick="self()">删除元素本身</button>
+      <button onclick="child()">删除子元素</button>
+      <button onclick="father()">删除父元素</button>
+    </div>
+    <script type="text/javascript">
+      function self() {
+        var me_box = document.querySelector(".meBox");
+        if (me_box) {
+          //这两种方法皆可
+          // me_box.remove();
+          me_box.parentNode.removeChild(me_box);
+        }
+      }
+
+      function child() {
+        var ol = document.querySelector("ol");
+        var appleLi = document.querySelector(".apple");
+        if (ol && appleLi) {
+          ol.removeChild(appleLi);
+        }
+      }
+
+      function father() {
+        var me_box = document.querySelector(".meBox");
+        var father_box = document.querySelector(".fatherBox");
+        if (me_box && father_box) {
+          me_box.parentNode.parentNode.removeChild(father_box);
+        }
+      }
+    </script>
+  </body>
+</html>

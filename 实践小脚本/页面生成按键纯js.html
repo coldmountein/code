@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    var a = document.querySelector(
+      ".css-18t94o4 css-1dbjc4n r-1niwhzg r-42olwf r-sdzlij r-1phboty r-rs99b7 r-2yi16 r-1qi8awa r-1ny4l3l r-o7ynqc r-6416eg r-lrvibr"
+    );
+    var btn = document.createElement("button");
+    // 按钮文字
+    btn.innerText = "《";
+    // 添加按钮的样式类名class值为back
+    btn.setAttribute("class", "back");
+    // 生成style标签
+    var style = document.createElement("style");
+    // 把样式写进去
+    style.innerText = `.back{position: fixed;
+        top: 380px;
+        right: 1310px;
+        width: 50px;
+        height: 50px;
+        padding: 3px 5px;
+        border: 1px solid #0d6efd;
+        cursor: pointer;
+        color: #0d6efd;
+        font-size: 2px;
+        background-color: transparent;
+        border-radius: 5px;
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+        z-index: 9999999999999;
+      }
+      .back:hover {
+        background-color: #0d6efd;
+        color: rgb(255, 255, 255);}`;
+    // 在head中添加style标签
+    document.head.appendChild(style);
+    // 在body中添加button按钮
+    document.body.appendChild(btn);
+    // 点击按钮去执行回到顶部函数
+    document.querySelector(".back").addEventListener("click", function () {
+      alert("等待绑定按键");
+    });
+  </script>
+</html>

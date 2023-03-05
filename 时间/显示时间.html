@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 500px;
+        height: 500px;
+        background-color: pink;
+        text-align: center;
+        line-height: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <script>
+      let arr = [
+        "星期天",
+        "星期一",
+        "星期二",
+        "星期三",
+        "星期四",
+        "星期五",
+        "星期六",
+      ];
+      gettime();
+      setInterval(gettime, 1000);
+      function gettime() {
+        let date = new Date();
+        let year = date.getFullYear();
+        let month = date.getMonth() + 1;
+        let date1 = date.getDate();
+        let hour = date.getHours();
+        let min = date.getMinutes();
+        let sec = date.getSeconds();
+        let day = date.getDay();
+        let div = document.querySelector("div");
+        // console.log(day.innerHTML)
+        div.innerHTML = `今天是：${year}年${month}月${date1}日 ${hour}：${min}：${sec} ${arr[day]}`;
+      }
+    </script>
+  </body>
+</html>

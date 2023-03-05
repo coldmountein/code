@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function repeat() {
+        var a = document.getElementById("aniBox");
+        a.remove();
+        var b = document.getElementById("banner-container");
+        b.remove();
+        var c = document.getElementById("content-container");
+        c.firstChild.childNodes[4].remove();
+        var d = document.getElementById("__next");
+        d.childNodes[5].remove();
+        var e = document.getElementsByClassName("vm-skin vm-skin-left");
+        e[0].remove();
+        var f = document.getElementsByClassName("vm-skin vm-skin-right");
+        f[0].remove();
+      }
+      setInterval(repeat, 1000);
+    </script>
+  </body>
+</html>
+z

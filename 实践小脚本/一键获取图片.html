@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h1 id="#11"></h1>
+      <img src="" alt="" id="#333" />
+      <br />
+      <button
+        id="#22"
+        onclick="getlove()"
+        style="position: fixed; top: 380px; right: 35%; color: #0d6efd"
+        ;
+      >
+        点击获取图片
+      </button>
+    </div>
+    <script src="./jQuery.js"></script>
+    <script>
+      function getlove() {
+        document.getElementById("#333").innerHTML = "正在获取";
+        $.ajax({
+          type: "GET",
+          url: "https://api.uomg.com/api/rand.img1?format=json",
+          success: function (data) {
+            var obj = JSON.parse(data);
+            console.log(obj);
+            console.log(typeof obj);
+            document.getElementById("#333").src = obj.imgurl;
+            console.log(data.status);
+          },
+        });
+      }
+    </script>
+  </body>
+</html>

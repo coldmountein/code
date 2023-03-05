@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function repeat() {
+        var a = document.getElementById("s_top_wrap");
+        a.remove();
+        var b = document.getElementById("s_wrap");
+        b.remove();
+        var c = document.getElementById("bottom_layer");
+        c.remove();
+        var d = document.getElementById("s-top-left");
+        d.remove();
+        var e = document.getElementById("s_lm_wrap");
+        e.remove();
+      }
+      setInterval(repeat, 200);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h1 id="#11"></h1>
+      <h1 id="#22"></h1>
+    </div>
+    <script>
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", "https://api.uomg.com/api/rand.qinghua?format=js");
+      xhr.send();
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          var a = xhr.responseText;
+          a = a.substr(35, a.length - 39);
+          document.getElementById("#11").innerText = xhr.responseText;
+          document.getElementById("#22").innerText = a;
+        }
+      };
+    </script>
+  </body>
+</html>

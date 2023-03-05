@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      button {
+        font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue,
+          PingFang SC, Microsoft YaHei, Source Han Sans SC, Noto Sans CJK SC,
+          WenQuanYi Micro Hei, sans-serif;
+        font-size: 15px;
+        color: #121212;
+        -webkit-tap-highlight-color: rgba(18, 18, 18, 0);
+        position: fixed;
+        bottom: 0;
+        right: 12px;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        flex-direction: column;
+        transition: all 10s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="CornerAnimayedFlex CornerAnimayedFlex--hidden">
+      <button
+        data-tooltip="回到顶部"
+        data-tooltip-position="left"
+        data-tooltip-will-hide-on-click="true"
+        aria-label="回到顶部"
+        type="button"
+        class="Button CornerButton css-gdd4kf"
+      >
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+          class="Zi Zi--BackToTop"
+          fill="currentColor"
+        >
+          <path
+            d="M13.204 3.107a1.75 1.75 0 00-2.408 0L3.806 9.73c-1.148 1.088-.378 3.02 1.204 3.02h2.24V20c0 .966.784 1.75 1.75 1.75h6A1.75 1.75 0 0016.75 20v-7.25h2.24c1.582 0 2.353-1.932 1.204-3.02l-6.99-6.623z"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+          ></path>
+        </svg>
+      </button>
+    </div>
+    <script>
+      document.write("顶部<br>");
+      for (let i = 0; i < 99; i++) {
+        document.write("sadasdasas<br>");
+      }
+      let btn = document.querySelector("button");
+      addEventListener("click", function () {
+        window.scrollTo(0, 0);
+      });
+    </script>
+  </body>
+</html>

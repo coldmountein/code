@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <body>
+      <div>
+        <button class="jishu">dianji</button>
+      </div>
+      <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+      <script>
+        let i = 0;
+        function repeat() {
+          $(".jishu").trigger("click");
+        }
+        setInterval(repeat, 500);
+        $(".jishu").click(function () {
+          i++;
+          console.log(i);
+        });
+      </script>
+    </body>
+  </body>
+</html>

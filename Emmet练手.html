@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* <!-- 为了得到 margin: 10px; 只用简单的展开缩写 m10。想要多个值？ 使用连字符分隔值：m10-20 展开为 margin: 10px 20px;。负值？没问题，第一个值前放一个连字符，其它的值前放两个连字符：m-10--20 展开为 margin: -10px -20px;。 --> */
+      .page {
+        margin: -10px -20px;
+      }
+      /* 常用单位别名：
+
+p → %
+e → em
+x → ex
+You can use aliases instead of full units:
+
+示例：
+
+w100p → width: 100%
+m10p30e5x → margin: 10% 30em 5ex */
+    </style>
+  </head>
+  <body>
+    <!-- #page>div.logo+ul#navigation>li*5>a{Item $} -->
+    <div id="page">
+      <div class="logo"></div>
+      <ul id="navigation">
+        <li><a href="">Item1</a></li>
+        <li><a href="">Item2</a></li>
+        <li><a href="">Item3</a></li>
+        <li><a href="">Item4</a></li>
+        <li><a href="">Item5</a></li>
+      </ul>
+    </div>
+    <!-- div>ul>li > 子元素 -->
+    <div>
+      <ul>
+        <li></li>
+      </ul>
+    </div>
+    <!-- div+p+bq  + 兄弟元素 -->
+    <div></div>
+    <p></p>
+    <blockquote></blockquote>
+    <!-- div+div>p>span+em ^ 返回上层-->
+    <div></div>
+    <div>
+      <p>
+        <sapn></sapn>
+        <em></em>
+      </p>
+    </div>
+    <!-- div>(header>ul>li*2>a)+footer>p  () 分组-->
+    <div>
+      <header>
+        <ul>
+          <li><a href=""></a></li>
+          <li><a href=""></a></li>
+        </ul>
+      </header>
+      <footer>
+        <p></p>
+      </footer>
+    </div>
+    <!-- (div>dl>(dt+dd)*3)+footer>p -->
+    <div>
+      <dl>
+        <dt></dt>
+        <dd></dd>
+        <dt></dt>
+        <dd></dd>
+        <dt></dt>
+        <dd></dd>
+      </dl>
+    </div>
+    <footer>
+      <p></p>
+    </footer>
+    <!-- div#header+div.page+div#footer.class1.class2.class3 使用类似于 CSS 选择器的语法给元素添加属性-->
+    <div id="header"></div>
+    <div class="page"></div>
+    <div id="footer" class="class1 class2 class3"></div>
+    <!-- td[title="Hello world!" colspan=3] 使用[]添加自定义属性 -->
+    <td title="Hello world!!" colspan="3"></td>
+    <!-- ul>li.item$*5  操作符可以生成重复元素，而 $ 可以对元素编号。将 $ 放在元素名、属性名或属性值中：-->
+    <ul>
+      <li class="item1"></li>
+      <li class="item2"></li>
+      <li class="item3"></li>
+      <li class="item4"></li>
+      <li class="item5"></li>
+    </ul>
+    <!-- ul>li.item$$$*5 多个连写的 $ 可以生成带有前导零的编号：-->
+    <ul>
+      <li class="item001"></li>
+      <li class="item002"></li>
+      <li class="item003"></li>
+      <li class="item004"></li>
+      <li class="item005"></li>
+    </ul>
+    <!-- ul>li.item$@-*5 使用 @ 修饰符，可以改变编号的方向（升序或降序）及起点。-->
+    <ul>
+      <li class="item5"></li>
+      <li class="item4"></li>
+      <li class="item3"></li>
+      <li class="item2"></li>
+      <li class="item1"></li>
+    </ul>
+    <!-- ul>li.item$@-3*5 -->
+    <ul>
+      <li class="item7"></li>
+      <li class="item6"></li>
+      <li class="item5"></li>
+      <li class="item4"></li>
+      <li class="item3"></li>
+    </ul>
+    <!-- a{Click me} 使用大括号为元素添加文本（译注：类似于模板的插入符）-->
+    <a href="">Click me</a>
+    <!-- 在重复元素内使用 lorem 填充随机文本。比如 p*4>lorem： -->
+
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa eum,
+      quibusdam dicta voluptatibus omnis ratione voluptatum aspernatur nesciunt
+      nemo consequatur quaerat! Magnam doloremque minus itaque sunt beatae
+      quibusdam assumenda inventore!
+    </p>
+    <p>
+      Eos voluptatem fugiat eligendi aperiam harum consequatur ut error
+      obcaecati consequuntur quidem perferendis veritatis, rerum provident
+      distinctio, vel ipsa quae aut aspernatur veniam praesentium! Nihil
+      corrupti aliquid saepe expedita quasi?
+    </p>
+    <p>
+      A facilis illum facere, reiciendis eveniet placeat fuga assumenda earum
+      harum voluptatum quos deleniti cupiditate repudiandae sed velit, ut
+      officiis praesentium, ex fugit aspernatur. Maxime deleniti quibusdam
+      labore minus at?
+    </p>
+    <p>
+      Perspiciatis nobis sed temporibus, nostrum possimus ipsam deserunt
+      delectus. Laboriosam, vel debitis. Dicta dolore accusantium saepe possimus
+      necessitatibus eius ex sint, natus, tempore totam, quibusdam similique
+      earum reiciendis dolor. Animi?
+    </p>
+    <!-- ul.generic-list>lorem10.item*4 lorem 也能 解析隐式标签名。当只重复 lorem 时可以简化缩写：-->
+    <ul class="generic-list">
+      <li>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit,
+        pariatur?
+      </li>
+      <li>Mollitia qui, nulla eius in excepturi impedit veniam magnam. Et.</li>
+      <li>
+        Nemo esse ea in consequuntur laborum cum ipsam, temporibus voluptas?
+      </li>
+      <li>
+        Eos totam sint fuga adipisci repudiandae incidunt nemo nobis tenetur?
+      </li>
+    </ul>
+  </body>
+</html>
